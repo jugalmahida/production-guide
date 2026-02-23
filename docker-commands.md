@@ -1,5 +1,8 @@
 # 🐳 Docker Cheatsheet
 
+## Production Grade Docker System Design - MERN Stack Application
+![Production Grade Docker System Design](/images/Docker-Mern-Production-Grade-System-Design.png)
+
 ## Basic Commands
 
 | Command                               | Description                             |
@@ -213,6 +216,7 @@ docker exec -it redis-stack bash
 ```
 
 ---
+
 
 ## Tips
 
