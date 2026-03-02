@@ -1,6 +1,5 @@
 # 🐳 Docker Cheatsheet
 
-
 ## Basic Commands
 
 | Command                               | Description                             |
@@ -213,8 +212,19 @@ docker exec -it redis-stack bash
 # then inside: redis-cli
 ```
 
----
+## Build & RUN Production Grade docker image of express app
 
+```
+1. docker build -t <name>:<version> --platform linux/arm64 .
+2. go to /backend folder make sure there should a .env file presents & env variables must not contains the whitespaces
+2. docker run --rm -p  1001:8001 --env-file .env mern-express:v1
+```
+
+### Remarks
+
+1. Use --platform linux/arm64 only when, host machine is linux (vps) not windows(local pc)
+
+---
 
 ## Tips
 
