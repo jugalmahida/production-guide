@@ -140,9 +140,15 @@ docker compose up -d       # Start all services in detached mode
 docker compose down        # Stop and remove all services
 
 eg:
+up commands
 docker compose -f .\development-docker-compose.yml up --build -d # start all service in detach mode
 
 docker compose -f .\development-docker-compose.yml up mongodb -d # run only monogodb service, which is inside the docker compose file
+
+down commands
+docker compose -f .\development-docker-compose.yml down mongodb # down only mongodb service
+docker compose -f .\development-docker-compose.yml down
+# down all whole service with networks
 ```
 
 ---
