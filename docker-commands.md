@@ -134,8 +134,13 @@ Defines and runs multi-container apps from a single `docker-compose.yml` file.
 
 ```bash
 docker compose up          # Start all services
+docker compose -d -f <filepath> up
+docker compose -d -f <filepath> up -build # for the rebuilding the images & containers
 docker compose up -d       # Start all services in detached mode
 docker compose down        # Stop and remove all services
+
+eg:
+docker compose -f .\development-docker-compose.yml up --build -d
 ```
 
 ---
@@ -212,12 +217,17 @@ docker exec -it redis-stack bash
 # then inside: redis-cli
 ```
 
-## Build & RUN Production Grade docker image of express app
+## Build & RUN Production Grade docker images of mern app
 
 ```
+# Node + Express
 1. docker build -t <name>:<version> --platform linux/arm64 .
 2. go to /backend folder make sure there should a .env file presents & env variables must not contains the whitespaces
 2. docker run --rm -p  1001:8001 --env-file .env mern-express:v1
+
+# Frontend
+1. docker build -t mern-frontend:v1 .
+2. docker run --rm -p 8080:80 --env-file .env mern-frontend:v1
 ```
 
 ### Remarks
