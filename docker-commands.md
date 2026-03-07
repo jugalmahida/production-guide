@@ -247,6 +247,19 @@ docker exec -it redis-stack bash
 
 ---
 
+# Clean Separation of Responsibilities
+
+| Task | Who does it |
+|---|---|
+| Restart crashed container | Docker (`restart` policy) |
+| Health checking | Docker (`healthcheck`) |
+| Stop routing to unhealthy | Traefik |
+| Load balance requests | Traefik |
+
+> **Key Takeaway**
+> Docker handles **recovery**, Traefik handles **routing** — they work together but independently. ✅
+---
+
 ## Tips
 
 - `CTRL + L` — Clear the terminal
