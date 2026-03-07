@@ -152,6 +152,12 @@ down commands
 docker compose -f .\development-docker-compose.yml down mongodb # down only mongodb service
 docker compose -f .\development-docker-compose.yml down
 # down all whole service with networks
+
+start/stop commands :
+docker compose -f .\development-docker-compose.yml start
+
+docker compose -f .\development-docker-compose.yml stop
+
 ```
 
 ---
