@@ -145,6 +145,9 @@ docker compose -f .\development-docker-compose.yml up --build -d # start all ser
 
 docker compose -f .\development-docker-compose.yml up mongodb -d # run only monogodb service, which is inside the docker compose file
 
+# re-build only frontend & check the health of its dependant containers (frontend -> backend -> mongodb)
+docker compose -f .\development-docker-compose.yml up --build frontend -d
+
 down commands
 docker compose -f .\development-docker-compose.yml down mongodb # down only mongodb service
 docker compose -f .\development-docker-compose.yml down
